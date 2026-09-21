@@ -137,21 +137,12 @@
             color: #ffffff;
         }
  
-        /* ===== NEW: Header with brand and PDF button ===== */
+        /* ===== PDF HEADER ===== */
         .pdf-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             margin-bottom: 12px;
-        }
-        .pdf-brand {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #0f2b4a;
-            letter-spacing: 0.01em;
-        }
-        .pdf-brand span {
-            color: #d4a017;
         }
         .pdf-header .status {
             font-size: 0.8rem;
@@ -508,33 +499,6 @@
             border-bottom-color: #d4a017;
             color: #d4a017;
         }
-        /* Строка с агентством - отдельно, на новой строке */
-        .agency-row {
-            flex-basis: 100%;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid #eef2f7;
-        }
-        .agency-row .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-        }
-        .agency-row .contact-item .emoji {
-            font-size: 1.2rem;
-            opacity: 0.7;
-        }
-        .agency-row .contact-item a {
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
-            color: #0f2b4a;
-        }
-        .agency-row .contact-item a:hover {
-            border-bottom-color: #d4a017;
-            color: #d4a017;
-        }
  
         /* ===== FOOTER ===== */
         .footer {
@@ -635,10 +599,6 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            .agency-row {
-                margin-top: 8px;
-                padding-top: 8px;
-            }
             .stages .stage-item {
                 padding: 6px 16px;
                 font-size: 0.85rem;
@@ -661,10 +621,6 @@
                 align-items: stretch;
                 gap: 8px;
                 margin-bottom: 12px;
-            }
-            .pdf-brand {
-                text-align: center;
-                font-size: 1rem;
             }
             .btn-pdf {
                 width: 100%;
@@ -727,9 +683,8 @@
  
     <div class="container" id="proposal">
  
-        <!-- ===== НОВАЯ ШАПКА: текст слева, кнопка справа (на десктопе) ===== -->
+        <!-- ===== ШАПКА: только кнопка PDF ===== -->
         <div class="pdf-header">
-            <div class="pdf-brand">🏢 Камерное агентство <span>Akovi</span></div>
             <button class="btn btn-pdf" id="pdfBtn">⬇ Скачать PDF</button>
             <span class="status" id="pdfStatus"></span>
         </div>
@@ -1015,6 +970,19 @@
                 </div>
                 <div class="pricing-grid">
                     <div class="pricing-card">
+                        <div class="name">Минимальный</div>
+                        <div class="price">30 000 ₽ <small>/ месяц</small></div>
+                        <p class="desc">
+                            Настройка рекламной кампании на лид-форму в ВК (сайт не требуется):
+                            брендовые запросы по застройщикам без ПВ, «купить квартиру в новостройке»,
+                            «купить квартиру без ПВ», «как купить квартиру без ПВ».
+                            Ключевые запросы согласовываются с клиентом индивидуально.
+                        </p>
+                        <div class="budget">
+                            <span>📊 Минимальный рекламный бюджет: 50 000 ₽ (без НДС + 22%)</span>
+                        </div>
+                    </div>
+                    <div class="pricing-card">
                         <div class="name">Базовый минимум</div>
                         <div class="price">40 000 ₽ <small>/ месяц</small></div>
                         <p class="desc">
@@ -1053,11 +1021,11 @@
                 <div style="margin-top:20px; background:#fcf8ed; border-radius:16px; padding:20px 24px; border-left:4px solid #d4a017;">
                     <p style="margin-bottom:6px;">
                         <strong>Условия оплаты:</strong> Подготовка рекламной кампании начинается после
-                        <strong>50% или 100% предоплаты</strong>.
+                        <strong>100% предоплаты</strong>.
                     </p>
                     <p style="margin-bottom:6px;">
-                        После регистрации рекламного кабинета, подготовки к запуску, согласования всех
-                        заголовков, текстов и картинок вносится оставшиеся <strong>50% оплаты</strong>.
+                        Последующие месяцы — по желанию клиента: <strong>50% в начале месяца</strong>,
+                        остальные <strong>50% по истечении двух недель</strong>.
                     </p>
                     <p style="margin-bottom:0;">
                         На протяжении месяца я осуществляю работу по ведению, мониторингу и оптимизации
@@ -1122,7 +1090,7 @@
                 </div>
             </section>
  
-            <!-- ===== КОНТАКТЫ (С ДОБАВЛЕНИЕМ АГЕНТСТВА) ===== -->
+            <!-- ===== КОНТАКТЫ ===== -->
             <section id="contacts">
                 <div class="section-title">
                     <h2>Контакты</h2>
@@ -1145,14 +1113,6 @@
                         <div class="contact-item">
                             <span class="emoji">🌐</span>
                             <a href="https://max.ru/id381112224360_biz" target="_blank" rel="noopener">MAX</a>
-                        </div>
-                        <!-- Новая строка для агентства AKOVI -->
-                        <div class="agency-row">
-                            <div class="contact-item">
-                                <span class="emoji">🏢</span>
-                                <span>Камерное агентство AKOVI: </span>
-                                <a href="tel:+79642302016">+7 964 230 2016</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1257,5 +1217,3 @@
  
 </body>
 </html>
-
-
